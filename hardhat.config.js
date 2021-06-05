@@ -56,6 +56,8 @@ module.exports = {
         process.env.ONE_MAINNET_DEPLOYER_PRIVATE_KEY,
         process.env.ONE_MAINNET_MARKET_ADMIN_PRIVATE_KEY,
       ],
+      gasLimit: '30000000',
+      // version 0.8.4
     },
   },
 
