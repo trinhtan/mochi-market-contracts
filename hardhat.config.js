@@ -58,6 +58,13 @@ module.exports = {
       ],
       gasLimit: '6721975',
     },
+    mumbai: {
+      url: `https://rpc-mumbai.matic.today`,
+      accounts: [
+        process.env.MUMBAI_DEPLOYER_PRIVATE_KEY,
+        process.env.MUMBAI_MARKET_ADMIN_PRIVATE_KEY,
+      ]
+    }
   },
 
   gas: 40000000,

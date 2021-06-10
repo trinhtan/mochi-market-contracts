@@ -2,14 +2,14 @@ const { ethers, network } = require('hardhat');
 
 async function main() {
     if (
-        network.name != 'maticmainnet'
+        network.name != 'maticmainnet' && network.name != 'mumbai'
     ) {
         throw Error('Invalid network');
     }
 
     let royaltyNumerator = '20';
     let royaltyDenominator = '100';
-    let momaTokenAddress = '0x0000000000000000000000000000000000000001';
+    let momaTokenAddress = '0xE3AB61371ECc88534C522922a026f2296116C109';
     let momaFeeNumerator = '1';
     let momaFeeDenominator = '100';
     let regularFeeNumerator = '25';
@@ -133,9 +133,11 @@ async function main() {
     await tx.wait();
 
     // Approve Native coin and MOMA;
-    console.log('\nAccept native coin');
+    console.log('\nAccept native coin and MOMA');
     let market = await ethers.getContractAt('Market', await addressesProvider.getMarket());
     tx = await market.connect(marketAdmin).acceptToken(nativeCoinAddress);
+    await tx.wait();
+    tx = await market.connect(marketAdmin).acceptToken(momaTokenAddress);
     await tx.wait();
 
     console.log('\nDeploy Mochi NFT...');

@@ -22,7 +22,8 @@
     "deploy-bsc-testnet": "npx hardhat run scripts/deploy.js --network bsctestnet",
     "deploy-bsc-mainnet": "npx hardhat run scripts/deploy.js --network bscmainnet",
     "deploy-rinkeby": "npx hardhat run scripts/deploy.js --network rinkeby",
-    "deploy-matic-mainnet": "npx hardhat run scripts/deployMatic.js --network maticmainnet"
+    "deploy-matic-mainnet": "npx hardhat run scripts/deployMatic.js --network maticmainnet",
+    "deploy-mumbai": "npx hardhat run scripts/deployMatic.js --network mumbai"
   },
   "devDependencies": {
     "@nomiclabs/hardhat-web3": "^2.0.0",
