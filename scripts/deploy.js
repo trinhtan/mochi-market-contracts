@@ -4,7 +4,8 @@ async function main() {
   if (
     network.name != 'bsctestnet' &&
     network.name != 'bscmainnet' &&
-    network.name != 'rinkeby'
+    network.name != 'rinkeby' &&
+    network.name != 'moonbasealpha'
   ) {
     throw Error('Invalid network');
   }
@@ -34,6 +35,10 @@ async function main() {
   }
   if (network.name === 'bsctestnet') {
     nativeCoin = 'BNB';
+  }
+  if (network.name === 'moonbasealpha') {
+    momaTokenAddress = '0xF584bdd94C9b719f8Edf55951A9eA58072c55a18';
+    nativeCoin = 'DEV';
   }
 
   if (momaTokenAddress === '' || momaTokenAddress === undefined) {

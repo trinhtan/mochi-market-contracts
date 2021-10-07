@@ -50,6 +50,14 @@ module.exports = {
       ],
       gasLimit: '6721975',
     },
+    moonbasealpha: {
+      url: `https://rpc.testnet.moonbeam.network`,
+      accounts: [
+        process.env.MOONBASE_ALPHA_DEPLOYER_PRIVATE_KEY,
+        process.env.MOONBASE_ALPHA_MARKET_ADMIN_PRIVATE_KEY,
+      ],
+      gasLimit: '6721975',
+    },
   },
 
   gas: 40000000,
